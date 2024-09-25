@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gradient Creator</title>
+	<script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<!-- Add this button at the beginning of the body -->
+	<button id="save-button" class="save-button">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16L21 8V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M17 21V13H7V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M7 3V8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+	</button>
+
+	<button id="theme-toggle" class="theme-toggle">
+		<svg class="sun-icon" width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M12 2V4M12 20V22M4 12H2M6.31412 6.31412L4.8999 4.8999M17.6859 6.31412L19.1001 4.8999M6.31412 17.69L4.8999 19.1042M17.6859 17.69L19.1001 19.1042M22 12H20M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+		<svg class="moon-icon" width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M16.5 13C19.0768 13 21.2397 11.228 21.8366 8.83604C21.4087 8.94287 20.961 8.99958 20.5 8.99958C17.4624 8.99958 15 6.53715 15 3.49958C15 3.03881 15.0567 2.59128 15.1634 2.16357C12.7717 2.76068 11 4.92345 11 7.50003C11 8.41275 11.2223 9.27355 11.6158 10.0312M5 7V3M3 5H7M6 22C3.79086 22 2 20.2091 2 18C2 16.0221 3.43551 14.3796 5.32148 14.0573C6.12876 11.697 8.3662 10 11 10C13.2882 10 15.2772 11.2809 16.2892 13.1648C16.6744 13.0574 17.0805 13 17.5 13C19.9853 13 22 15.0147 22 17.5C22 19.9853 19.9853 22 17.5 22C13.6667 22 9.83333 22 6 22Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+	</button>
+	<button id="share-button" class="share-button">
+		<svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M8.59 13.51L15.42 17.49M15.41 6.51L8.59 10.49M21 5C21 6.65685 19.6569 8 18 8C16.3431 8 15 6.65685 15 5C15 3.34315 16.3431 2 18 2C19.6569 2 21 3.34315 21 5ZM9 12C9 13.6569 7.65685 15 6 15C4.34315 15 3 13.6569 3 12C3 10.3431 4.34315 9 6 9C7.65685 9 9 10.3431 9 12ZM21 19C21 20.6569 19.6569 22 18 22C16.3431 22 15 20.6569 15 19C15 17.3431 16.3431 16 18 16C19.6569 16 21 17.3431 21 19Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+	</button>
+	<main class="container">
+		<h1>Gradient Creator</h1>
+		<div class="content">
+			<div class="controls">
+				<div class="input-group">
+					<label for="input-width">Width:</label>
+					<input type="number" id="input-width" class="input-width" value="1920"> px
+				</div>
+				<div class="input-group">
+					<label for="input-height">Height:</label>
+					<input type="number" id="input-height" class="input-height" value="1080"> px
+				</div>
+				<div class="input-group">
+					<label for="input-linear-start-color">Linear Start Color:</label>
+					<input type="color" id="input-linear-start-color" class="input-linear-start-color" value="#00b3ff">
+				</div>
+				<div class="input-group">
+					<label for="input-linear-end-color">Linear End Color:</label>
+					<input type="color" id="input-linear-end-color" class="input-linear-end-color" value="#004a8f">
+				</div>
+				<div class="input-group">
+					<label for="input-radial-color">Radial Color:</label>
+					<input type="color" id="input-radial-color" class="input-radial-color" value="#8c00ff">
+				</div>
+				<div class="input-group">
+					<label for="saved-gradients">Saved Gradients:</label>
+					<select id="saved-gradients">
+						<option value="">-- Select a saved gradient --</option>
+					</select>
+				</div>
+				<div class="button-wrapper">
+					<button type="button" class="btn-generate-wallpaper">Generate Gradient</button>
+					<button type="button" class="btn-randomize">Randomize</button>
+					<button type="button" class="btn-remove-radial">Remove Radial</button>
+				</div>
+			</div>
+			<canvas class="wallpaper" width="1920" height="1080"></canvas>
+		</div>
+	</main>
+</body>
+</html>
