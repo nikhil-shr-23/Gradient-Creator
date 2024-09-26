@@ -168,10 +168,10 @@ const shareButton = document.getElementById('share-button');
 
 shareButton.addEventListener('click', async () => {
 	try {
-		// Get the canvas data URL
+		
 		const dataUrl = wallpaper.toDataURL('image/png');
 
-		// Check if the Web Share API is supported and includes file sharing
+		
 		if (navigator.share && navigator.canShare && navigator.canShare({ files: [new File([dataUrl], 'gradient_wallpaper.png', { type: 'image/png' })] })) {
 			const file = await (await fetch(dataUrl)).blob();
 			await navigator.share({
@@ -180,7 +180,7 @@ shareButton.addEventListener('click', async () => {
 				files: [new File([file], 'gradient_wallpaper.png', { type: 'image/png' })]
 			});
 		} else {
-			// Fallback for browsers that don't support the Web Share API or file sharing
+			
 			const link = document.createElement('a');
 			link.href = dataUrl;
 			link.download = 'gradient_wallpaper.png';
@@ -191,7 +191,7 @@ shareButton.addEventListener('click', async () => {
 		}
 	} catch (error) {
 		console.error('Error sharing/downloading:', error);
-		// Provide a more user-friendly error message
+		
 		if (error.name === 'AbortError') {
 			
 		} else {
@@ -245,10 +245,10 @@ function updateSavedGradientsList() {
 	}
 }
 
-// Call this function when the page loads to populate the saved gradients list
+
 updateSavedGradientsList();
 
-// Add this function to load a saved gradient
+
 function loadSavedGradient(name) {
 	const savedGradients = JSON.parse(localStorage.getItem("savedGradients")) || {};
 	const gradient = savedGradients[name];
@@ -267,7 +267,7 @@ function loadSavedGradient(name) {
 	}
 }
 
-// Add an event listener for the saved gradients dropdown
+
 savedGradientsSelect.addEventListener('change', (event) => {
 	const selectedGradientName = event.target.value;
 	if (selectedGradientName) {
